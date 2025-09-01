@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Speaking Assessment - Links Institute</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 1100px;
+    margin: 5px auto;
+    border: 1.5px solid #333;
+    padding: 6px 20px 6px 20px;
+    background: #fff;
+    box-sizing: border-box;
+    font-size: 11px;
+    color: #000;
+    position: relative;
+  }
+  #logo {
+    position: absolute;
+    top: 10px;
+    right: 35px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #234075;
+    text-shadow:
+      1px 1px 0 #a7b9d1,
+      1.5px 1.5px 1px #7183ab,
+      1.5px 3px 2px rgba(0,0,0,0.25);
+    user-select: none;
+    white-space: nowrap;
+  }
+  h2, h3 {
+    text-align: center;
+    margin: 2px 0 5px;
+    page-break-after: avoid;
+    font-weight: 600;
+    font-size: 17px;
+  }
+  form div {
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .header-label {
+    font-weight: bold;
+    margin-right: 6px;
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  #name {
+    min-width: 220px;
+    max-width: 600px;
+    padding: 3px 6px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    resize: horizontal;
+    overflow: auto;
+    height: 22px;
+  }
+  #date {
+    height: 22px;
+    padding: 3px 6px;
+    font-size: 12px;
+  }
+  input[type="text"], input[type="number"], textarea {
+    box-sizing: border-box;
+    font-size: 12px;
+    padding: 3px 5px;
+    font-family: Arial, sans-serif;
+  }
+  input[type="text"], input[type="number"] {
+    height: 22px;
+    vertical-align: middle;
+  }
+  textarea {
+    resize: both;
+    min-height: 24px;
+    height: 24px;
+    min-width: 100%;
+    font-size: 12px;
+  }
+  #level {
+    width: 70px;
+  }
+  #score {
+    width: 55px;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 8px;
+    font-size: 11px;
+    page-break-inside: avoid;
+    table-layout: fixed;
+  }
+  th, td {
+    border: 1px solid #333;
+    padding: 4px 6px;
+    vertical-align: top;
+    text-align: left;
+    word-wrap: break-word;
+  }
+  th {
+    background-color: #e2e2e2;
+    font-weight: 700;
+  }
+  th:nth-child(1), td:nth-child(1) { width: 14%; }
+  th:nth-child(2), td:nth-child(2) { width: 21%; }
+  th:nth-child(3), td:nth-child(3) { width: 21%; }
+  th:nth-child(4), td:nth-child(4) { width: 21%; }
+  th:nth-child(5), td:nth-child(5) { width: 14%; }
+  th:nth-child(6), td:nth-child(6) { width: 9%; }
+  .total-row td {
+    font-weight: 700;
+    text-align: right;
+    background: #ddd;
+  }
+  #total_points {
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 12px;
+    border: none;
+    background: none;
+    text-align: center;
+  }
+  button#printButton {
+    display: block;
+    margin: 12px auto 15px auto;
+    padding: 8px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    user-select: none;
+  }
+  @media print {
+    @page {
+      size: A4 landscape;
+      margin-left: 0.5in;
+      margin-right: 0.5in;
+      margin-top: 0.5cm;
+      margin-bottom: 0.5cm;
+    }
+    body {
+      border: none;
+      margin: 0;
+      max-width: 100%;
+      background: white;
+      font-size: 10pt;
+      color: #000;
+      padding-left: 0.5in;
+      padding-right: 0.5in;
+      box-sizing: border-box;
+    }
+    button#printButton {
+      display: none;
+    }
+    #logo {
+      display: block;
+      position: fixed;
+      top: 10px;
+      right: 35px;
+      font-size: 17px;
+      font-weight: 700;
+      text-shadow:
+        1px 1px 0 #a7b9d1,
+        1.5px 1.5px 1px #7183ab,
+        1.5px 3px 2px rgba(0,0,0,0.25);
+      user-select: none;
+      white-space: nowrap;
+      z-index: 1000;
+    }
+    h2, h3 {
+      page-break-after: avoid;
+      margin: 2px 0 5px;
+      font-size: 14pt;
+    }
+    form, table {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      -webkit-print-color-adjust: exact;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="logo">Links Institute</div>
+
+<h2>ENGLISH FOR ACADEMIC PURPOSES</h2>
+<h3>SPEAKING ASSESSMENT</h3>
+
+<button id="printButton" onclick="window.print()">Print / Save as PDF</button>
+
+<form id="assessmentForm">
+  <div>
+    <label class="header-label" for="name">NAME:</label>
+    <input type="text" id="name" name="name" placeholder="Enter student name" />
+  </div>
+  <div>
+    <label class="header-label" for="date">DATE:</label>
+    <input type="date" id="date" name="date" />
+  </div>
+  <div>
+    <label class="header-label" for="level">LEVEL:</label>
+    <input type="text" id="level" name="level" placeholder="Enter level" />
+    <label class="header-label" for="topic" style="margin-left:15px;">TOPIC:</label>
+    <input type="text" id="topic" name="topic" placeholder="Enter topic" />
+    <label class="header-label" for="score" style="margin-left:15px;">SCORE:</label>
+    <input type="number" id="score" name="score" min="0" max="24" readonly /> / 24
+    <span id="percentage" style="margin-left:10px;font-weight:bold;"></span>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>4 (Above Standard for the Level)</th>
+        <th>3 (At Standard for the Level)</th>
+        <th>2 (Below Standard for the Level)</th>
+        <th>1 (Well Below Standard for the Level)</th>
+        <th>Points</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Pronunciation / Comprehensibility</th>
+        <td>The student presents clear pronunciation that helps comprehension. Very few pronunciation mistakes are made. (1-3 mistakes)</td>
+        <td>The student presents clear pronunciation that helps comprehension. Some pronunciation mistakes are made. (4-6 mistakes)</td>
+        <td>The student presents pronunciation that sometimes interferes with comprehension. Regularly makes pronunciation mistakes. (7-10 mistakes)</td>
+        <td>The student presents unclear pronunciation. He/she makes too many pronunciation mistakes that interfere with comprehension. (11 or more mistakes)</td>
+        <td><input type="number" class="points" name="pronunciation_points" min="1" max="4" oninput="calculateTotal()" /></td>
+      </tr>
+      <tr>
+        <th>Delivery and Attitude</th>
+        <td>The student delivers the whole message in a confident way. He/she uses facial expressions and gestures to enrich the message most of the time.</td>
+        <td>The student delivers most of the message in a confident way. He/she sometimes uses facial expression and gestures to enrich the message.</td>
+        <td>The student delivers the message in an uncertain way. He/she uses facial expression and gestures very few times to enrich the message.</td>
+        <td>The student delivers the message with no confidence. He/she does not use neither facial expressions nor gestures to enrich the message.</td>
+        <td><input type="number" class="points" name="delivery_points" min="1" max="4" oninput="calculateTotal()" /></td>
+      </tr>
+      <tr>
+        <th>Content</th>
+        <td>All the ideas the student presents, regarding his/her opinion, are supported by additional information or explanations.</td>
+        <td>Most of the ideas that the student presents are supported by additional information or explanations.</td>
+        <td>Some of the ideas that the student presents are not supported by additional information or explanations.</td>
+        <td>The ideas regarding the opinion of the student are not supported by additional information or explanations.</td>
+        <td><input type="number" class="points" name="content_points" min="1" max="4" oninput="calculateTotal()" /></td>
+      </tr>
+      <tr>
+        <th>Fluency</th>
+        <td>The student presents no hesitation and he/she does not need to search for words.</td>
+        <td>The student presents some hesitation and he/she rarely has to search for words. (1 or 2 times)</td>
+        <td>The student hesitates frequently and he/she often has to search for words. (3 or 4 times)</td>
+        <td>The student is extremely hesitant. He/she has to search for words most of the time. (More than 5 times)</td>
+        <td><input type="number" class="points" name="fluency_points" min="1" max="4" oninput="calculateTotal()" /></td>
+      </tr>
+      <tr>
+        <th>Grammar</th>
+        <td>The student presents very few grammatical mistakes. (1-3 mistakes)</td>
+        <td>The student presents some grammatical mistakes. (4-6 mistakes)</td>
+        <td>The student regularly presents grammatical mistakes. (7-9 mistakes)</td>
+        <td>The student makes a lot of grammatical mistakes. (10 or more mistakes)</td>
+        <td><input type="number" class="points" name="grammar_points" min="1" max="4" oninput="calculateTotal()" /></td>
+      </tr>
+      <tr>
+        <th>Vocabulary</th>
+        <td>The student presents very few lexical mistakes. (1-3 mistakes)</td>
+        <td>The student presents some lexical mistakes. (4-6 mistakes)</td>
+        <td>The student presents some lexical mistakes. (4-6 mistakes)</td>
+        <td>The student regularly presents lexical mistakes. (7-9 mistakes)</td>
+        <td><input type="number" class="points" name="vocabulary_points" min="1" max="4" oninput="calculateTotal()" /></td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="5" style="text-align:right;">TOTAL</td>
+        <td><input type="number" id="total_points" name="total_points" readonly /></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br />
+  <label for="comments"><b>COMMENTS:</b></label><br />
+  <textarea id="comments" name="comments" placeholder="Enter comments" style="height: 24px; min-height: 24px; resize: both;"></textarea>
+</form>
+
+<button id="printButton" onclick="window.print()">Print / Save as PDF</button>
+
+<script>
+  function calculateTotal() {
+    const pointsInputs = document.querySelectorAll('input.points');
+    let total = 0;
+    pointsInputs.forEach(input => {
+      const val = parseInt(input.value);
+      if (!isNaN(val)) {
+        total += val;
+      }
+    });
+    document.getElementById('total_points').value = total;
+    document.getElementById('score').value = total;
+    const percent = ((total / 24) * 100).toFixed(1);
+    document.getElementById('percentage').textContent = percent + '%';
+  }
+</script>
+
+</body>
+</html>
